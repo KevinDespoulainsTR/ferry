@@ -1,0 +1,3 @@
+mutation UpdatePokemons($pokemons: [PokemonUpdateInput!]) {
+ updatePokemons(pokemons: $pokemons)
+}

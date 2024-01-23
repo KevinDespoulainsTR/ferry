@@ -30,6 +30,8 @@ final BuiltSet<GCacheControlScope> _$gCacheControlScopeValues =
 
 Serializer<GCacheControlScope> _$gCacheControlScopeSerializer =
     new _$GCacheControlScopeSerializer();
+Serializer<GPokemonUpdateInput> _$gPokemonUpdateInputSerializer =
+    new _$GPokemonUpdateInputSerializer();
 
 class _$GCacheControlScopeSerializer
     implements PrimitiveSerializer<GCacheControlScope> {
@@ -47,6 +49,155 @@ class _$GCacheControlScopeSerializer
   GCacheControlScope deserialize(Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
       GCacheControlScope.valueOf(serialized as String);
+}
+
+class _$GPokemonUpdateInputSerializer
+    implements StructuredSerializer<GPokemonUpdateInput> {
+  @override
+  final Iterable<Type> types = const [
+    GPokemonUpdateInput,
+    _$GPokemonUpdateInput
+  ];
+  @override
+  final String wireName = 'GPokemonUpdateInput';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GPokemonUpdateInput object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(int)),
+      'name',
+      serializers.serialize(object.name, specifiedType: const FullType(String)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GPokemonUpdateInput deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GPokemonUpdateInputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GPokemonUpdateInput extends GPokemonUpdateInput {
+  @override
+  final int id;
+  @override
+  final String name;
+
+  factory _$GPokemonUpdateInput(
+          [void Function(GPokemonUpdateInputBuilder)? updates]) =>
+      (new GPokemonUpdateInputBuilder()..update(updates))._build();
+
+  _$GPokemonUpdateInput._({required this.id, required this.name}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, r'GPokemonUpdateInput', 'id');
+    BuiltValueNullFieldError.checkNotNull(name, r'GPokemonUpdateInput', 'name');
+  }
+
+  @override
+  GPokemonUpdateInput rebuild(
+          void Function(GPokemonUpdateInputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GPokemonUpdateInputBuilder toBuilder() =>
+      new GPokemonUpdateInputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GPokemonUpdateInput && id == other.id && name == other.name;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GPokemonUpdateInput')
+          ..add('id', id)
+          ..add('name', name))
+        .toString();
+  }
+}
+
+class GPokemonUpdateInputBuilder
+    implements Builder<GPokemonUpdateInput, GPokemonUpdateInputBuilder> {
+  _$GPokemonUpdateInput? _$v;
+
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  GPokemonUpdateInputBuilder();
+
+  GPokemonUpdateInputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _name = $v.name;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GPokemonUpdateInput other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GPokemonUpdateInput;
+  }
+
+  @override
+  void update(void Function(GPokemonUpdateInputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GPokemonUpdateInput build() => _build();
+
+  _$GPokemonUpdateInput _build() {
+    final _$result = _$v ??
+        new _$GPokemonUpdateInput._(
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GPokemonUpdateInput', 'id'),
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'GPokemonUpdateInput', 'name'));
+    replace(_$result);
+    return _$result;
+  }
 }
 
 class _$GUpload extends GUpload {

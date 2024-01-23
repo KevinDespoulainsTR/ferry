@@ -7,34 +7,34 @@ import 'package:built_value/serializer.dart';
 import 'package:ferry_exec/ferry_exec.dart' as _i1;
 import 'package:gql_exec/gql_exec.dart' as _i4;
 import 'package:pokemon_explorer/__generated__/serializers.gql.dart' as _i6;
-import 'package:pokemon_explorer/src/graphql/__generated__/pokemon_detail.ast.gql.dart'
+import 'package:pokemon_explorer/src/graphql/__generated__/update_pokemon.ast.gql.dart'
     as _i5;
-import 'package:pokemon_explorer/src/graphql/__generated__/pokemon_detail.data.gql.dart'
+import 'package:pokemon_explorer/src/graphql/__generated__/update_pokemon.data.gql.dart'
     as _i2;
-import 'package:pokemon_explorer/src/graphql/__generated__/pokemon_detail.var.gql.dart'
+import 'package:pokemon_explorer/src/graphql/__generated__/update_pokemon.var.gql.dart'
     as _i3;
 
-part 'pokemon_detail.req.gql.g.dart';
+part 'update_pokemon.req.gql.g.dart';
 
-abstract class GPokemonDetailReq
+abstract class GUpdatePokemonsReq
     implements
-        Built<GPokemonDetailReq, GPokemonDetailReqBuilder>,
-        _i1.OperationRequest<_i2.GPokemonDetailData, _i3.GPokemonDetailVars> {
-  GPokemonDetailReq._();
+        Built<GUpdatePokemonsReq, GUpdatePokemonsReqBuilder>,
+        _i1.OperationRequest<_i2.GUpdatePokemonsData, _i3.GUpdatePokemonsVars> {
+  GUpdatePokemonsReq._();
 
-  factory GPokemonDetailReq(
-          [void Function(GPokemonDetailReqBuilder b) updates]) =
-      _$GPokemonDetailReq;
+  factory GUpdatePokemonsReq(
+          [void Function(GUpdatePokemonsReqBuilder b) updates]) =
+      _$GUpdatePokemonsReq;
 
-  static void _initializeBuilder(GPokemonDetailReqBuilder b) => b
+  static void _initializeBuilder(GUpdatePokemonsReqBuilder b) => b
     ..operation = _i4.Operation(
       document: _i5.document,
-      operationName: 'PokemonDetail',
+      operationName: 'UpdatePokemons',
     )
     ..executeOnListen = true;
 
   @override
-  _i3.GPokemonDetailVars get vars;
+  _i3.GUpdatePokemonsVars get vars;
   @override
   _i4.Operation get operation;
   @override
@@ -47,12 +47,12 @@ abstract class GPokemonDetailReq
   String? get requestId;
   @override
   @BuiltValueField(serialize: false)
-  _i2.GPokemonDetailData? Function(
-    _i2.GPokemonDetailData?,
-    _i2.GPokemonDetailData?,
+  _i2.GUpdatePokemonsData? Function(
+    _i2.GUpdatePokemonsData?,
+    _i2.GUpdatePokemonsData?,
   )? get updateResult;
   @override
-  _i2.GPokemonDetailData? get optimisticResponse;
+  _i2.GUpdatePokemonsData? get optimisticResponse;
   @override
   String? get updateCacheHandlerKey;
   @override
@@ -62,31 +62,32 @@ abstract class GPokemonDetailReq
   @override
   bool get executeOnListen;
   @override
-  _i2.GPokemonDetailData? parseData(Map<String, dynamic> json) =>
-      _i2.GPokemonDetailData.fromJson(json);
+  _i2.GUpdatePokemonsData? parseData(Map<String, dynamic> json) =>
+      _i2.GUpdatePokemonsData.fromJson(json);
 
   @override
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(_i2.GPokemonDetailData data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GUpdatePokemonsData data) =>
+      data.toJson();
 
   @override
-  _i1.OperationRequest<_i2.GPokemonDetailData, _i3.GPokemonDetailVars>
+  _i1.OperationRequest<_i2.GUpdatePokemonsData, _i3.GUpdatePokemonsVars>
       transformOperation(_i4.Operation Function(_i4.Operation) transform) =>
           this.rebuild((b) => b..operation = transform(operation));
 
-  static Serializer<GPokemonDetailReq> get serializer =>
-      _$gPokemonDetailReqSerializer;
+  static Serializer<GUpdatePokemonsReq> get serializer =>
+      _$gUpdatePokemonsReqSerializer;
 
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
-        GPokemonDetailReq.serializer,
+        GUpdatePokemonsReq.serializer,
         this,
       ) as Map<String, dynamic>);
 
-  static GPokemonDetailReq? fromJson(Map<String, dynamic> json) =>
+  static GUpdatePokemonsReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
-        GPokemonDetailReq.serializer,
+        GUpdatePokemonsReq.serializer,
         json,
       );
 }

@@ -22,7 +22,7 @@ abstract class GAllPokemonReq
         _i1.OperationRequest<_i2.GAllPokemonData, _i3.GAllPokemonVars> {
   GAllPokemonReq._();
 
-  factory GAllPokemonReq([Function(GAllPokemonReqBuilder b) updates]) =
+  factory GAllPokemonReq([void Function(GAllPokemonReqBuilder b) updates]) =
       _$GAllPokemonReq;
 
   static void _initializeBuilder(GAllPokemonReqBuilder b) => b
@@ -68,7 +68,7 @@ abstract class GAllPokemonReq
   Map<String, dynamic> varsToJson() => vars.toJson();
 
   @override
-  Map<String, dynamic> dataToJson(dynamic data) => data.toJson();
+  Map<String, dynamic> dataToJson(_i2.GAllPokemonData data) => data.toJson();
 
   @override
   _i1.OperationRequest<_i2.GAllPokemonData, _i3.GAllPokemonVars>

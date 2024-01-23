@@ -6,7 +6,8 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:gql_code_builder/src/serializers/default_scalar_serializer.dart'
-    as _i1;
+    as _i2;
+import 'package:pokemon_explorer/__generated__/serializers.gql.dart' as _i1;
 
 part 'schema.schema.gql.g.dart';
 
@@ -26,6 +27,31 @@ class GCacheControlScope extends EnumClass {
       _$gCacheControlScopeValueOf(name);
 }
 
+abstract class GPokemonUpdateInput
+    implements Built<GPokemonUpdateInput, GPokemonUpdateInputBuilder> {
+  GPokemonUpdateInput._();
+
+  factory GPokemonUpdateInput(
+          [void Function(GPokemonUpdateInputBuilder b) updates]) =
+      _$GPokemonUpdateInput;
+
+  int get id;
+  String get name;
+  static Serializer<GPokemonUpdateInput> get serializer =>
+      _$gPokemonUpdateInputSerializer;
+
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GPokemonUpdateInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+
+  static GPokemonUpdateInput? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GPokemonUpdateInput.serializer,
+        json,
+      );
+}
+
 abstract class GUpload implements Built<GUpload, GUploadBuilder> {
   GUpload._();
 
@@ -35,7 +61,7 @@ abstract class GUpload implements Built<GUpload, GUploadBuilder> {
   String get value;
   @BuiltValueSerializer(custom: true)
   static Serializer<GUpload> get serializer =>
-      _i1.DefaultScalarSerializer<GUpload>(
+      _i2.DefaultScalarSerializer<GUpload>(
           (Object serialized) => GUpload((serialized as String?)));
 }
 

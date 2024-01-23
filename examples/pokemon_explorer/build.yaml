@@ -5,6 +5,7 @@ targets:
         enabled: true
         options:
           schema: pokemon_explorer|lib/schema.graphql
+          tristate_optionals: false
           when_extensions:
             when: true
             maybeWhen: true

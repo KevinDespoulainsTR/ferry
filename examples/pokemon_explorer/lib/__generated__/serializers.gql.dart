@@ -8,7 +8,7 @@ import 'package:ferry_exec/ferry_exec.dart';
 import 'package:gql_code_builder/src/serializers/operation_serializer.dart'
     show OperationSerializer;
 import 'package:pokemon_explorer/__generated__/schema.schema.gql.dart'
-    show GCacheControlScope, GUpload;
+    show GCacheControlScope, GPokemonUpdateInput, GUpload;
 import 'package:pokemon_explorer/src/graphql/__generated__/all_pokemon.data.gql.dart'
     show
         GAllPokemonData,
@@ -41,6 +41,12 @@ import 'package:pokemon_explorer/src/graphql/__generated__/pokemon_detail.req.gq
     show GPokemonDetailReq;
 import 'package:pokemon_explorer/src/graphql/__generated__/pokemon_detail.var.gql.dart'
     show GPokemonDetailVars;
+import 'package:pokemon_explorer/src/graphql/__generated__/update_pokemon.data.gql.dart'
+    show GUpdatePokemonsData;
+import 'package:pokemon_explorer/src/graphql/__generated__/update_pokemon.req.gql.dart'
+    show GUpdatePokemonsReq;
+import 'package:pokemon_explorer/src/graphql/__generated__/update_pokemon.var.gql.dart'
+    show GUpdatePokemonsVars;
 
 part 'serializers.gql.g.dart';
 
@@ -71,6 +77,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GPokemonDetailData_pokemon_weight,
   GPokemonDetailReq,
   GPokemonDetailVars,
+  GPokemonUpdateInput,
+  GUpdatePokemonsData,
+  GUpdatePokemonsReq,
+  GUpdatePokemonsVars,
   GUpload,
 ])
 final Serializers serializers = _serializersBuilder.build();

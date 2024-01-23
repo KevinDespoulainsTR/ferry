@@ -31,7 +31,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GPokemonDetailData_pokemon_weight.serializer)
       ..add(GPokemonDetailReq.serializer)
       ..add(GPokemonDetailVars.serializer)
+      ..add(GPokemonUpdateInput.serializer)
+      ..add(GUpdatePokemonsData.serializer)
+      ..add(GUpdatePokemonsReq.serializer)
+      ..add(GUpdatePokemonsVars.serializer)
       ..add(GUpload.serializer)
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GPokemonUpdateInput)]),
+          () => new ListBuilder<GPokemonUpdateInput>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType.nullable(GAllPokemonData_pokemons_results)

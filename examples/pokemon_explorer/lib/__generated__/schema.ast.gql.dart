@@ -546,7 +546,53 @@ const Mutation = _i1.ObjectTypeDefinitionNode(
         name: _i1.NameNode(value: 'String'),
         isNonNull: true,
       ),
-    )
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updatePokemons'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'pokemons'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'PokemonUpdateInput'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'bool'),
+        isNonNull: true,
+      ),
+    ),
+  ],
+);
+const PokemonUpdateInput = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'PokemonUpdateInput'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'name'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const Pokemon = _i1.ObjectTypeDefinitionNode(
@@ -1140,6 +1186,7 @@ const document = _i1.DocumentNode(definitions: [
   ItemCategory,
   Move,
   Mutation,
+  PokemonUpdateInput,
   Pokemon,
   PokemonList,
   Query,

@@ -83,6 +83,12 @@ type Move {
 
 type Mutation {
   sayHello(name: String!): String!
+  updatePokemons(pokemons: [PokemonUpdateInput!]): bool!
+}
+
+input PokemonUpdateInput {
+  id: Int!
+  name: String!
 }
 
 type Pokemon {
@@ -165,4 +171,3 @@ type Weight {
   in_kg: String
   in_lbs: String
 }
-
